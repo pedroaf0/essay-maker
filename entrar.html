@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sistema de cadastro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+  <style>
+    p {
+        tab-size: 4;
+        text-align:justify;
+        width: 60%;
+    }
+</style>
+<nav class="navbar navbar-light bg-light justify-content-between up">
+    <a class="navbar-brand" href="#">
+      <img src="logo_cti.png" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="btn btn-outline-success my-5 my-sm-5 navup"><i class='fas fa-home' style='font-size:20px'></i> home </button>
+    <!-- <button class="btn btn-outline-success my-5 my-sm-5 navup"><i class='fab fa-telegram-plane' style='font-size:20px'></i> Contato </button>
+    <button class="btn btn-outline-success my-5 my-sm-5 navup"><i class='fas fa-question-circle' style='font-size:20px'></i> Ajuda </button> -->
+    <button style="float: right;" class="btn btn-outline-success my-5 my-sm-5 navup"><i class="fas fa-sign-out-alt" style='font-size:20px'></i> Sair </button>
+</nav>
+
+<div class="container upp">
+  <h2>Sistema de listagem de notas</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Dados">Dados</a></li>
+    <li><a data-toggle="tab" href="#info">Como saber o que colocar</a></li>
+    <!-- <li><a data-toggle="tab" href="#Identificação">Identificação</a></li>
+    <li><a data-toggle="tab" href="#Telefone-E-mail">Telefone/E-mail</a></li> -->
+  </ul>
+
+  <div class="tab-content">
+    <div id="Dados" class="tab-pane fade in active">
+        <form>
+          <div class="form-group">
+            <label for="Argumento1">Argumento 1</label>
+            <select class="form-control" id="Argumento1">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Argumento2">Argumento 2</label>
+            <select class="form-control" id="Argumento2">
+            </select>
+          </div>
+            <div class="form-group">
+              <label for="Auth">Auth tokens</label>
+              <input onmouseover="getvalue(this)" onchange="savevalue(this)" type="text" class="form-control" id="Auth" placeholder='{"token_type":"Bearer","scope":"govbr_empresa+phone+email+openid+profile","access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIwMTYzOTI0MzA5NyIsImF1ZCI6InNpc3VhbHVuby5tZWMuZ292LmJyIiwic2NvcGUiOlsiZW1haWwiLCJnb3Zicl9lbXByZXNhIiwib3BlbmlkIiwicGhvbmUiLCJwcm9maWxlIl0sImFtciI6WyJwYXNzd2QiXSwiaXNzIjoiaHR0cHM6XC9cL3Nzby5hY2Vzc28uZ292LmJyXC8iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIwMTYzOTI0MzA5NyIsImV4cCI6MTY0NTAzNzExNCwiaWF0IjoxNjQ1MDM1OTE0LCJqdGkiOiI5MTFiNGQ4NC01NTgxLTQzYTUtYTZiYi0xYTg5ZjY0M2EyZTIiLCJjYW5kaWRhdG8iOnsibnVfY3BmIjoiMTYzOTI0MzA5NyIsIm51X25vdGFfciI6IjgyMC4wIiwiY29faW5zY3JpY2FvX2VuZW0iOjIxMTAwODEwNjU0NywiZHRfY2llbnRlX2RhZG9zX2NvbnRhdG8iOiIyMDIyLTAyLTE1IDA3OjQwOjE5LjM4MTAwMDAiLCJpbl90cmVpbmVpcm8iOiIwIn19.dMzyGIp6fA3gE0AIrZq0-jXDnL4fh-b1QQFb9CtEGUTKOxsHgkczYBwrupiTHcmR4wIhZOm6AnuAufZgYmGkqcs3DglVEwR8XmYjrxDdpx25WVYOXZlPnCvJ4wspd9Bt5Yhwk8FfmtFIdA4E7x1ZxcFNs5pTWQ7W9IOZ4BoZplR0BsX45BQepIol9hW4yNNaxs0yaQf9kt0Md1IfmkMHTIdZWTXKwWQ_5Ni0OS1c2LtTo6JdkIhuqli7GJEOqAQsxev2YM7zcIfFrelnVJdiXVC1MgjzeGWuv7UdqLpuHoALgfzRQL1xurQUPJDQ0ECBo5arL8UcUZQe9e5J7-oYfw","expires":1645039514}'>
+            </div>
+            
+          </form>
+    </div>
+  <button id="submit" onclick="submit()" type="submit" class="btn btn-primary submit">Enviar</button><br><br>
+  <span id="redação">
+    <p>
+      &emsp;{Repertório + Fato positivo}. Entretanto,  {isso} não foi suficiente para {Resolver o tema}. Nesse sentido, é preciso analisar como não só o {Argumento 1}, mas também o {Argumento 2} contribuem para esse problema.
+  </p><p>
+    &emsp;A princípio, é preciso destacar que {tópico frasal}. Nessa lógica, {Repertório + fundamentação}. Assim, {Fechamento}.
+  </p><p>
+    &emsp;Além disso, {tópico frasal 2}. Nesse viés, {Repertório + fundamentação}. Dessa forma, {Fechamento}.
+  </p><p>
+    &emsp;Portanto, fica claro que {tese} precisa ser solucionado/a. Para tanto, é dever do {agente}, {detalhamento}, {ação}. Isso por meio {meio} {detalhamento}. Com o objetivo de {finalidade}. Ainda, também é preciso que o {agente 2} {ação}, com o objetivo de {finalidade}, através de {meio}.
+  </p>
+  </span>
+<br><br><br>
+
+</div>
+<script>
+ var argumentos = [
+  {
+    argumento: 'Ineficácia da legislação',
+    tf: 'A inefetividade da legislação dificulta a {Resolução do tema}',
+    repertorio: 'Constituição Federal',
+    fundamentacao: 'a Constituição Federal de 1988 deveria garantir a<b>integridade</b>dos brasileiros.<b>No entanto</b>, essa legislação é incapaz de resolver o {<i>TEMA}</i>, visto que o{<b>problema</b>continua atuando fortemente no contexto atual (Dado da coletania)}',
+    fechamento: 'a legislação sendo<b>ineficaz</b>, dificulta a resolução desse<b>impasse</b>.',
+    agente: 'Poder executivo',
+    acao: 'Fazer com que a lei seja satisfeita',
+    detalhamento_agente: 'visto que é o setor <b>responsável </b>pela<b></b>efetivação da legislação',
+    detalhamento_meio: '',
+    meio: 'da nomeação de um novo diretor/ministro, realmente comprometido em resolver essa questão, para a {instituição}',
+    finalidade: 'amenizar o problema do {tema}'
+  },
+  {
+    argumento: 'imediatismo',
+    tf: 'o {tema} tem como pilar a busca constante por prazeres instantâneos',
+    repertorio: 'Zygmunt Bauman, modernidade líquida',
+    fundamentacao: 'o conceito de modernidade líquida, do sociólogo Zygmunt Bauman elucida a carência de firmeza nas relações atuais. Nesse viés, a necessidade de combater o {problema} é ignorada',
+    fechamento: 'fica clara a dificuldade dos indivíduos se engajarem na solução dessa questão',
+    agente: 'Ministério da cidadania',
+    acao: 'empenhar a população na luta contra o {problema}',
+    detalhamento_agente: '',
+    detalhamento_meio: 'esse jogo pode ser oferecido gratuitamente, por exemplo, nas lojas de aplicativo tanto para android quanto para IOS',
+    meio: 'da criação um jogo de celular socioeducativo que torne ludica/o a/o {resolução do problema}',
+    finalidade: 'atenuar os efeitos do {problema}'
+  },
+  {
+    argumento: 'Falta de conhecimento',
+    tf: 'a carência de informação sobre o {tema} garante a permanencia do {problema}',
+    repertorio: 'Paulo Freire',
+    fundamentacao: 'concordando com o educador Paulo Freire, a privação da educação dificulta a vivência plena. Nessa lógica, a falta de entendimento sobre o {tema} prejudica o dia a dia dos brasileiros',
+    fechamento: 'sem o ensino sobre o {problema} jamais será possível corrigi-lo',
+    agente: 'Ministério da Educação',
+    acao: 'propagar conhecimento sobre o {tema} (e seus efeitos)',
+    detalhamento_agente: '',
+    detalhamento_meio: 'esses mini-documentários podem ser difundidos, por exemplo, nas redes sociais e canais abertos.',
+    meio: 'da criação de videos educativos com linguagem clara e simples',
+    finalidade: 'garantir que a {solução do problema} seja atingida'
+  }
+]
+
+for (let index = 0; index < argumentos.length; index++) {
+  var option = document.createElement("option");
+  option.text = argumentos[index].argumento;
+  option.value = index;
+  document.getElementById("Argumento1").add(option); 
+  option = document.createElement("option");
+  option.text = argumentos[index].argumento;
+  option.value = index;
+  document.getElementById("Argumento2").add(option); 
+ }
+
+function submit(){
+  var red = `  <p>
+      &emsp;{Repertório + Fato positivo}. Entretanto,  {isso} não foi suficiente para {Resolver o tema}. Nesse sentido, é preciso analisar como não só o {Argumento 1}, mas também o {Argumento 2} contribuem para esse problema.
+  </p><p>
+    &emsp;A princípio, é preciso destacar que {tópico frasal}. Nessa lógica, {Repertório + fundamentação}. Assim, {Fechamento}.
+  </p><p>
+    &emsp;Além disso, {tópico frasal 2}. Nesse viés, {Repertório + fundamentação 2}. Dessa forma, {Fechamento 2}.
+  </p><p>
+    &emsp;Portanto, fica claro que {tese} precisa ser solucionado/a. Para tanto, é dever do {agente}, {detalhamento_agente}, {ação}. Isso por meio {meio}{detalhamento_meio}. Com o objetivo de {finalidade}. Ainda, também é encargo do {agente 2} {ação 2}, com o objetivo de {finalidade 2}, através de {meio 2}.
+  </p>`;
+  console.log(argumentos[document.getElementById("Argumento1").value].tf)
+  red = red.split("{tópico frasal}").join(argumentos[document.getElementById("Argumento1").value].tf)
+  red = red.split("{Repertório + fundamentação}").join(argumentos[document.getElementById("Argumento1").value].fundamentacao)
+  red = red.split("{Fechamento}").join(argumentos[document.getElementById("Argumento1").value].fechamento)
+  
+  red = red.split("{agente}").join(argumentos[document.getElementById("Argumento1").value].agente)
+  red = red.split("{ação}").join(argumentos[document.getElementById("Argumento1").value].acao)
+  red = red.split("{meio}").join(argumentos[document.getElementById("Argumento1").value].meio)
+  red = red.split("{finalidade}").join(argumentos[document.getElementById("Argumento1").value].finalidade)
+
+  if (!argumentos[document.getElementById("Argumento1").value].detalhamento_agente == ""){
+  red = red.split("{detalhamento_agente}").join(argumentos[document.getElementById("Argumento1").value].detalhamento_agente)
+  }else{
+    red = red.split(", {detalhamento_agente},").join("")
+  }
+  if (!argumentos[document.getElementById("Argumento1").value].detalhamento_meio == ""){
+  red = red.split("{detalhamento_meio}").join(argumentos[document.getElementById("Argumento1").value].detalhamento_agente)
+  }else{
+    red = red.split("{detalhamento_meio}").join("")
+  }
+
+  red = red.split("{agente 2}").join(argumentos[document.getElementById("Argumento2").value].agente)
+  red = red.split("{ação 2}").join(argumentos[document.getElementById("Argumento2").value].acao)
+  red = red.split("{meio 2}").join(argumentos[document.getElementById("Argumento2").value].meio)
+  red = red.split("{finalidade 2}").join(argumentos[document.getElementById("Argumento2").value].finalidade)
+
+  red = red.split("{tópico frasal 2}").join(argumentos[document.getElementById("Argumento2").value].tf)
+  red = red.split("{Repertório + fundamentação 2}").join(argumentos[document.getElementById("Argumento2").value].fundamentacao)
+  red = red.split("{Fechamento 2}").join(argumentos[document.getElementById("Argumento2").value].fechamento)
+
+  red = red.split("<b>").join("")
+  red = red.split("</b>").join("")
+
+  document.getElementById("redação").innerHTML = red
+}
+
+ function savevalue(this_){
+            localStorage.setItem(this_.id, this_.value);
+
+        }
+        function getvalue(this_){
+           this_.value = localStorage.getItem(this_.id);
+
+        }
+</script>
+</body>
+</html>
